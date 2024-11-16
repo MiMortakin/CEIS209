@@ -1,5 +1,5 @@
 # Projects
-<p>#Week 1: Created the Basic Foundation of Program</p>
-<p>#Week 2:</p>
+<p>#Week 1: Created the Basic Foundation of Program: Added the Text Field Labels and Text Fields. Built the Add Song button, which displayed information added in details window.</p>
+<p>#Week 2: Updated the Add Song button functions with basic validation scripting. Put another box display in that will list all songs added. Added another button that will show all songs that have been added. Played some more with the Add Song button, this time putting the song title in the Song List while song details are in the Song Details box. </p>
 <p>#Week 3: Really rounded the program out with updating the validation, declaring arrays for each section (title, artist, genre, year, and url) this will also limit the number of songs allowed. Because of limited songs, the add button has to be edited to count the number of songs added. Add button function for finding a song, which will list the details in the Song Details. Created a Clear Song button, which empties the data fields. Now, added the ability to view the song via the added URL. This requires adding the Web View Control function (WebView2). What is viewing the song without playing it? Added a play song button.</p>
  <p>#Week 3 Challenge: Researched how to store (save) and then load song list. Microsoft had a good write up on this: https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/csharp/language-compilers/read-write-text-file - Save link for more C# help.</p>
