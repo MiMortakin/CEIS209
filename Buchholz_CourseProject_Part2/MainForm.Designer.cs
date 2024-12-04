@@ -82,18 +82,20 @@
             // 
             // EmployeesListBox
             // 
-            this.EmployeesListBox.BackColor = System.Drawing.Color.LightGray;
+            this.EmployeesListBox.BackColor = System.Drawing.Color.White;
             this.EmployeesListBox.FormattingEnabled = true;
             this.EmployeesListBox.Location = new System.Drawing.Point(12, 57);
             this.EmployeesListBox.Name = "EmployeesListBox";
-            this.EmployeesListBox.Size = new System.Drawing.Size(478, 186);
+            this.EmployeesListBox.Size = new System.Drawing.Size(830, 186);
             this.EmployeesListBox.TabIndex = 4;
+            this.EmployeesListBox.DoubleClick += new System.EventHandler(this.EmployeesListBox_DoubleClick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 255);
+            this.BackColor = System.Drawing.Color.LightSlateGray;
+            this.ClientSize = new System.Drawing.Size(854, 255);
             this.Controls.Add(this.EmployeesListBox);
             this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.DisplayButton);

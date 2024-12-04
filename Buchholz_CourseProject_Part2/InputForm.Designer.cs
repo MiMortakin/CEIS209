@@ -39,6 +39,14 @@
             this.ExitButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.hireDateText = new System.Windows.Forms.TextBox();
+            this.GroupBenefitsBox = new System.Windows.Forms.GroupBox();
+            this.VacBox = new System.Windows.Forms.TextBox();
+            this.LifeBox = new System.Windows.Forms.TextBox();
+            this.HealthBox = new System.Windows.Forms.TextBox();
+            this.VacationText = new System.Windows.Forms.Label();
+            this.LifeText = new System.Windows.Forms.Label();
+            this.HealthText = new System.Windows.Forms.Label();
+            this.GroupBenefitsBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // firstNameLabel
@@ -53,7 +61,7 @@
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(12, 73);
+            this.lastNameLabel.Location = new System.Drawing.Point(12, 63);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(104, 24);
             this.lastNameLabel.TabIndex = 1;
@@ -62,7 +70,7 @@
             // ssnLabel
             // 
             this.ssnLabel.AutoSize = true;
-            this.ssnLabel.Location = new System.Drawing.Point(12, 121);
+            this.ssnLabel.Location = new System.Drawing.Point(12, 98);
             this.ssnLabel.Name = "ssnLabel";
             this.ssnLabel.Size = new System.Drawing.Size(58, 24);
             this.ssnLabel.TabIndex = 2;
@@ -73,30 +81,30 @@
             this.firstNameText.Location = new System.Drawing.Point(124, 23);
             this.firstNameText.Name = "firstNameText";
             this.firstNameText.Size = new System.Drawing.Size(290, 29);
-            this.firstNameText.TabIndex = 3;
+            this.firstNameText.TabIndex = 0;
             // 
             // lastNameText
             // 
-            this.lastNameText.Location = new System.Drawing.Point(124, 68);
+            this.lastNameText.Location = new System.Drawing.Point(124, 58);
             this.lastNameText.Name = "lastNameText";
             this.lastNameText.Size = new System.Drawing.Size(290, 29);
-            this.lastNameText.TabIndex = 4;
+            this.lastNameText.TabIndex = 1;
             // 
             // ssnText
             // 
-            this.ssnText.Location = new System.Drawing.Point(124, 116);
+            this.ssnText.Location = new System.Drawing.Point(124, 93);
             this.ssnText.Name = "ssnText";
             this.ssnText.Size = new System.Drawing.Size(290, 29);
-            this.ssnText.TabIndex = 5;
+            this.ssnText.TabIndex = 2;
             // 
             // submitButton
             // 
-            this.submitButton.BackColor = System.Drawing.Color.PaleGreen;
+            this.submitButton.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.submitButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.submitButton.Location = new System.Drawing.Point(42, 219);
+            this.submitButton.Location = new System.Drawing.Point(68, 316);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(132, 37);
-            this.submitButton.TabIndex = 6;
+            this.submitButton.TabIndex = 5;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
@@ -105,10 +113,10 @@
             // 
             this.ExitButton.BackColor = System.Drawing.Color.LightCoral;
             this.ExitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ExitButton.Location = new System.Drawing.Point(224, 219);
+            this.ExitButton.Location = new System.Drawing.Point(256, 316);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(132, 37);
-            this.ExitButton.TabIndex = 7;
+            this.ExitButton.TabIndex = 6;
             this.ExitButton.Text = "Cancel";
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
@@ -116,25 +124,89 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 165);
+            this.label1.Location = new System.Drawing.Point(12, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 24);
-            this.label1.TabIndex = 8;
+            this.label1.TabIndex = 3;
             this.label1.Text = "Hire Date:";
             // 
             // hireDateText
             // 
-            this.hireDateText.Location = new System.Drawing.Point(124, 162);
+            this.hireDateText.Location = new System.Drawing.Point(124, 128);
             this.hireDateText.Name = "hireDateText";
             this.hireDateText.Size = new System.Drawing.Size(290, 29);
-            this.hireDateText.TabIndex = 9;
+            this.hireDateText.TabIndex = 3;
+            // 
+            // GroupBenefitsBox
+            // 
+            this.GroupBenefitsBox.Controls.Add(this.VacBox);
+            this.GroupBenefitsBox.Controls.Add(this.LifeBox);
+            this.GroupBenefitsBox.Controls.Add(this.HealthBox);
+            this.GroupBenefitsBox.Controls.Add(this.VacationText);
+            this.GroupBenefitsBox.Controls.Add(this.LifeText);
+            this.GroupBenefitsBox.Controls.Add(this.HealthText);
+            this.GroupBenefitsBox.Location = new System.Drawing.Point(16, 176);
+            this.GroupBenefitsBox.Name = "GroupBenefitsBox";
+            this.GroupBenefitsBox.Size = new System.Drawing.Size(499, 134);
+            this.GroupBenefitsBox.TabIndex = 4;
+            this.GroupBenefitsBox.TabStop = false;
+            this.GroupBenefitsBox.Text = "Benefits";
+            // 
+            // VacBox
+            // 
+            this.VacBox.Location = new System.Drawing.Point(190, 90);
+            this.VacBox.Name = "VacBox";
+            this.VacBox.Size = new System.Drawing.Size(290, 29);
+            this.VacBox.TabIndex = 3;
+            // 
+            // LifeBox
+            // 
+            this.LifeBox.Location = new System.Drawing.Point(190, 55);
+            this.LifeBox.Name = "LifeBox";
+            this.LifeBox.Size = new System.Drawing.Size(290, 29);
+            this.LifeBox.TabIndex = 2;
+            // 
+            // HealthBox
+            // 
+            this.HealthBox.Location = new System.Drawing.Point(190, 20);
+            this.HealthBox.Name = "HealthBox";
+            this.HealthBox.Size = new System.Drawing.Size(290, 29);
+            this.HealthBox.TabIndex = 1;
+            // 
+            // VacationText
+            // 
+            this.VacationText.AutoSize = true;
+            this.VacationText.Location = new System.Drawing.Point(27, 95);
+            this.VacationText.Name = "VacationText";
+            this.VacationText.Size = new System.Drawing.Size(134, 24);
+            this.VacationText.TabIndex = 2;
+            this.VacationText.Text = "Vacation Days:";
+            // 
+            // LifeText
+            // 
+            this.LifeText.AutoSize = true;
+            this.LifeText.Location = new System.Drawing.Point(27, 60);
+            this.LifeText.Name = "LifeText";
+            this.LifeText.Size = new System.Drawing.Size(132, 24);
+            this.LifeText.TabIndex = 1;
+            this.LifeText.Text = "Life Insurance:";
+            // 
+            // HealthText
+            // 
+            this.HealthText.AutoSize = true;
+            this.HealthText.Location = new System.Drawing.Point(27, 25);
+            this.HealthText.Name = "HealthText";
+            this.HealthText.Size = new System.Drawing.Size(157, 24);
+            this.HealthText.TabIndex = 0;
+            this.HealthText.Text = "Health Insurance:";
             // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(431, 268);
+            this.ClientSize = new System.Drawing.Size(531, 366);
+            this.Controls.Add(this.GroupBenefitsBox);
             this.Controls.Add(this.hireDateText);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ExitButton);
@@ -147,10 +219,12 @@
             this.Controls.Add(this.firstNameLabel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "InputForm";
             this.Text = "Employee Input Form";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.GroupBenefitsBox.ResumeLayout(false);
+            this.GroupBenefitsBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,12 +235,19 @@
         private System.Windows.Forms.Label firstNameLabel;
         private System.Windows.Forms.Label lastNameLabel;
         private System.Windows.Forms.Label ssnLabel;
-        private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox firstNameText;
         public System.Windows.Forms.TextBox lastNameText;
         public System.Windows.Forms.TextBox ssnText;
         public System.Windows.Forms.TextBox hireDateText;
+        private System.Windows.Forms.GroupBox GroupBenefitsBox;
+        private System.Windows.Forms.Label VacationText;
+        private System.Windows.Forms.Label LifeText;
+        private System.Windows.Forms.Label HealthText;
+        public System.Windows.Forms.TextBox HealthBox;
+        public System.Windows.Forms.TextBox VacBox;
+        public System.Windows.Forms.TextBox LifeBox;
+        public System.Windows.Forms.Button submitButton;
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BenefitsClass.cs" />
     <Compile Include="EmployeeClass.cs" />
     <Compile Include="InputForm.cs">
       <SubType>Form</SubType>

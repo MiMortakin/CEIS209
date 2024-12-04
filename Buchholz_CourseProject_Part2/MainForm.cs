@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Buchholz_CourseProject_Part2
@@ -43,8 +35,12 @@ namespace Buchholz_CourseProject_Part2
                 string ssn = frmInput.ssnText.Text;
                 string date = frmInput.hireDateText.Text;
                 DateTime hireDate = DateTime.Parse(date);
+                string healthIns = frmInput.HealthBox.Text;
+                int lifeIns = int.Parse(frmInput.LifeBox.Text);
+                int vacation = Int32.Parse(frmInput.VacBox.Text);
 
-                Employee emp = new Employee(fName, lName, ssn, hireDate);
+                Benefits benefits = new Benefits(healthIns, lifeIns, vacation);
+                Employee emp = new Employee(fName, lName, ssn, hireDate, benefits);
 
                 //Adds the Employee object to Employee ListBox
                 EmployeesListBox.Items.Add(emp);
@@ -58,11 +54,17 @@ namespace Buchholz_CourseProject_Part2
         {
             string filename = "Employees.csv";
 
-            StreamWriter sw = new StreamWriter(filename);
+            StreamWriter sw = new StreamWriter(filename, false);
 
             foreach (Employee emp in EmployeesListBox.Items)
             {
-                sw.WriteLine(emp.FirstName + ',' + emp.LastName + ',' + emp.SSN + ',' + emp.HireDate.ToShortDateString());
+                sw.WriteLine(emp.FirstName + ',' 
+                    + emp.LastName + ','
+                    + emp.SSN + ','
+                    + emp.HireDate.ToShortDateString() + ','
+                    + emp.BenefitsEmp.HealthInsurance + ','
+                    + emp.BenefitsEmp.LifeInsurance + ','
+                    + emp.BenefitsEmp.VacationDays);
             }
             sw.Close();
         }
@@ -72,7 +74,7 @@ namespace Buchholz_CourseProject_Part2
             //Remove Selected Employee from EmployeeListBox
             int itemNumber = EmployeesListBox.SelectedIndex;
 
-            if(itemNumber > -1)
+            if (itemNumber > -1)
             {
                 EmployeesListBox.Items.RemoveAt(itemNumber);
 
@@ -98,7 +100,7 @@ namespace Buchholz_CourseProject_Part2
             string filename = "Employees.csv";
             StreamReader sr = new StreamReader(filename);
 
-            while (sr.Peek() != -1)
+            while ( sr.Peek() != -1 )
             {
                 string line = sr.ReadLine();
                 string[] parts = line.Split(',');
@@ -106,7 +108,13 @@ namespace Buchholz_CourseProject_Part2
                 string lastName = parts[1];
                 string ssn = parts[2];
                 DateTime hireDate = DateTime.Parse(parts[3]);
-                Employee emp = new Employee(firstName, lastName, ssn, hireDate);
+                string healthIns = parts[4];
+                int lifeIns = int.Parse(parts[5]);
+                int vacation = Int32.Parse(parts[6]);
+
+                //Employee Object and add to Listbox
+                Benefits benefits = new Benefits(healthIns, lifeIns, vacation);
+                Employee emp = new Employee(firstName, lastName, ssn, hireDate, benefits);
                 EmployeesListBox.Items.Add(emp);
             }
 
@@ -118,6 +126,49 @@ namespace Buchholz_CourseProject_Part2
             MessageBox.Show("Printing All Employee Paychecks...");
         }
 
-        
+        private void EmployeesListBox_DoubleClick(object sender, EventArgs e)
+        {
+            Employee emp = (Employee)EmployeesListBox.SelectedItem;
+
+            if (emp != null)
+            {
+                InputForm updateForm = new InputForm();
+
+                updateForm.Text = "Update Employee Information";
+                updateForm.submitButton.Text = "Update";
+                updateForm.StartPosition = FormStartPosition.CenterParent;
+                updateForm.firstNameText.Text = emp.FirstName;
+                updateForm.lastNameText.Text = emp.LastName;
+                updateForm.ssnText.Text = emp.SSN;
+                updateForm.hireDateText.Text = emp.HireDate.ToShortDateString();
+                updateForm.HealthBox.Text = emp.BenefitsEmp.HealthInsurance;
+                updateForm.LifeBox.Text = emp.BenefitsEmp.LifeInsurance.ToString();
+                updateForm.VacBox.Text = emp.BenefitsEmp.VacationDays.ToString();
+                DialogResult result = updateForm.ShowDialog();
+
+                //If Cancelled = Stop Method
+                if (result == DialogResult.Cancel)
+                    return; //This ends the method
+
+                //Deletes the Slected Object
+                int position = EmployeesListBox.SelectedIndex;
+                EmployeesListBox.Items.RemoveAt(position);
+
+                //Creates New Employee with the Updated Information
+                Employee newEmp = new Employee();
+                newEmp.FirstName = updateForm.firstNameText.Text;
+                newEmp.LastName = updateForm.lastNameText.Text;
+                newEmp.SSN = updateForm.ssnText.Text;
+                newEmp.HireDate = DateTime.Parse(updateForm.hireDateText.Text);
+                newEmp.BenefitsEmp.HealthInsurance = updateForm.HealthBox.Text;
+                newEmp.BenefitsEmp.LifeInsurance = int.Parse(updateForm.LifeBox.Text);
+                newEmp.BenefitsEmp.VacationDays = int.Parse(updateForm.VacBox.Text);
+
+                //Adds the new Employee to the ListBox
+                EmployeesListBox.Items.Add(newEmp);
+            }
+
+        }
     }
+
 }
