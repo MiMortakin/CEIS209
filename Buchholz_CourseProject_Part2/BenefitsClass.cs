@@ -1,5 +1,8 @@
-﻿namespace Buchholz_CourseProject_Part2
+﻿using System;
+
+namespace Buchholz_CourseProject_Part2
 {
+    [Serializable]
     public class Benefits
     {
         //Attributes

@@ -12,7 +12,22 @@ namespace Buchholz_CourseProject_Part2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            salaryText.Visible = salaryEmployee.Checked;
+            SalaryBox.Visible = salaryEmployee.Checked;
+            HRText.Visible = hourlyEmployee.Checked;
+            HRBox.Visible = hourlyEmployee.Checked;
+            HWText.Visible = hourlyEmployee.Checked;
+            HWBox.Visible = hourlyEmployee.Checked;
+        }
 
+        private void RadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            salaryText.Visible = salaryEmployee.Checked;
+            SalaryBox.Visible = salaryEmployee.Checked;
+            HRText.Visible = hourlyEmployee.Checked;
+            HRBox.Visible = hourlyEmployee.Checked;
+            HWText.Visible = hourlyEmployee.Checked;
+            HWBox.Visible = hourlyEmployee.Checked;
         }
 
         private void submitButton_Click(object sender, EventArgs e)
@@ -26,6 +41,5 @@ namespace Buchholz_CourseProject_Part2
             this.DialogResult = DialogResult.Cancel;
             this.Hide();
         }
-
     }
 }

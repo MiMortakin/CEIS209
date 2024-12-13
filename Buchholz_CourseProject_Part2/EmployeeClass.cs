@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 
 namespace Buchholz_CourseProject_Part2
 {
-    public class Employee
+    [Serializable]
+    public abstract class Employee
     {
         // Employee Attributes via Supplied UML Diagram
         private string firstName;
@@ -32,16 +34,13 @@ namespace Buchholz_CourseProject_Part2
         }
 
         // ToString and CalculatePay
+        public abstract double CalculatePay();
+
         public override string ToString()
         {
-            return $"First Name: {firstName}, Last Name: {lastName} | SSN: {ssn} | Hire Date: {hireDate.ToShortDateString()} | Benefits: {benefits}";
+            return $"Name: {FirstName} {LastName}, SSN: {SSN}, Hire Date: {HireDate.ToShortDateString()}";
         }
-
-        public double CalculatePay()
-        {
-            return 0;
-        }
-
+        
         // Getters and Setters
         public string FirstName
         {
