@@ -116,7 +116,7 @@
             this.submitButton.Location = new System.Drawing.Point(65, 516);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(132, 37);
-            this.submitButton.TabIndex = 5;
+            this.submitButton.TabIndex = 3;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
@@ -128,7 +128,7 @@
             this.ExitButton.Location = new System.Drawing.Point(282, 516);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(132, 37);
-            this.ExitButton.TabIndex = 6;
+            this.ExitButton.TabIndex = 4;
             this.ExitButton.Text = "Cancel";
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
@@ -160,7 +160,7 @@
             this.GroupBenefitsBox.Location = new System.Drawing.Point(12, 345);
             this.GroupBenefitsBox.Name = "GroupBenefitsBox";
             this.GroupBenefitsBox.Size = new System.Drawing.Size(499, 134);
-            this.GroupBenefitsBox.TabIndex = 4;
+            this.GroupBenefitsBox.TabIndex = 2;
             this.GroupBenefitsBox.TabStop = false;
             this.GroupBenefitsBox.Text = "Benefits";
             // 
@@ -169,21 +169,21 @@
             this.VacBox.Location = new System.Drawing.Point(190, 90);
             this.VacBox.Name = "VacBox";
             this.VacBox.Size = new System.Drawing.Size(290, 29);
-            this.VacBox.TabIndex = 3;
+            this.VacBox.TabIndex = 2;
             // 
             // LifeBox
             // 
             this.LifeBox.Location = new System.Drawing.Point(190, 55);
             this.LifeBox.Name = "LifeBox";
             this.LifeBox.Size = new System.Drawing.Size(290, 29);
-            this.LifeBox.TabIndex = 2;
+            this.LifeBox.TabIndex = 1;
             // 
             // HealthBox
             // 
             this.HealthBox.Location = new System.Drawing.Point(190, 20);
             this.HealthBox.Name = "HealthBox";
             this.HealthBox.Size = new System.Drawing.Size(290, 29);
-            this.HealthBox.TabIndex = 1;
+            this.HealthBox.TabIndex = 0;
             // 
             // VacationText
             // 
@@ -225,7 +225,7 @@
             this.EmployeeTypeGroup.Location = new System.Drawing.Point(12, 199);
             this.EmployeeTypeGroup.Name = "EmployeeTypeGroup";
             this.EmployeeTypeGroup.Size = new System.Drawing.Size(499, 140);
-            this.EmployeeTypeGroup.TabIndex = 7;
+            this.EmployeeTypeGroup.TabIndex = 1;
             this.EmployeeTypeGroup.TabStop = false;
             this.EmployeeTypeGroup.Text = "Employee Type";
             // 
@@ -234,7 +234,7 @@
             this.SalaryBox.Location = new System.Drawing.Point(190, 56);
             this.SalaryBox.Name = "SalaryBox";
             this.SalaryBox.Size = new System.Drawing.Size(290, 29);
-            this.SalaryBox.TabIndex = 7;
+            this.SalaryBox.TabIndex = 4;
             // 
             // salaryText
             // 
@@ -250,14 +250,14 @@
             this.HWBox.Location = new System.Drawing.Point(190, 94);
             this.HWBox.Name = "HWBox";
             this.HWBox.Size = new System.Drawing.Size(290, 29);
-            this.HWBox.TabIndex = 5;
+            this.HWBox.TabIndex = 3;
             // 
             // HRBox
             // 
             this.HRBox.Location = new System.Drawing.Point(190, 56);
             this.HRBox.Name = "HRBox";
             this.HRBox.Size = new System.Drawing.Size(290, 29);
-            this.HRBox.TabIndex = 4;
+            this.HRBox.TabIndex = 2;
             // 
             // HWText
             // 
@@ -314,7 +314,7 @@
             this.EmployeeInfoGroup.Location = new System.Drawing.Point(12, 20);
             this.EmployeeInfoGroup.Name = "EmployeeInfoGroup";
             this.EmployeeInfoGroup.Size = new System.Drawing.Size(498, 173);
-            this.EmployeeInfoGroup.TabIndex = 8;
+            this.EmployeeInfoGroup.TabIndex = 0;
             this.EmployeeInfoGroup.TabStop = false;
             this.EmployeeInfoGroup.Text = "Employee Info";
             // 
